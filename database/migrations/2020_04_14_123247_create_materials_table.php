@@ -15,7 +15,14 @@ class CreateMaterialsTable extends Migration
     {
         Schema::create('materials', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('supplier');
+            $table->string('unit');
+            $table->string('comment', 256);
+            $table->unsignedBigInteger('inventory_id')->unsigned()->default(1);
             $table->timestamps();
+
+            $table->foreign('inventory_id')->references('id')->on('inventories');
         });
     }
 
