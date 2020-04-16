@@ -8,6 +8,6 @@ class Material extends Model
 {
     public function inventories ()
     {
-        return $this->hasMany('App\Inventory', 'foreign_key');
+        return $this->hasMany('App\Inventory');
     }
 }
