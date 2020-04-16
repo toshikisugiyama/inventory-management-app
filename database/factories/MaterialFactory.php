@@ -12,6 +12,5 @@ $factory->define(Material::class, function (Faker $faker) {
         'supplier' => $faker->company,
         'unit' => Str::random(2),
         'comment' => $faker->sentence,
-        'inventory_id' => $faker->numberBetween(1, 50)
     ];
 });

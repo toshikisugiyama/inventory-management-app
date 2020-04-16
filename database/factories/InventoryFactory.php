@@ -13,5 +13,6 @@ $factory->define(Inventory::class, function (Faker $faker) {
         'dead_line' => $faker->dateTime(),
         'status_flug' => $faker->numberBetween(0, 3),
         'comment' => $faker->sentence,
+        'material_id' => $faker->numberBetween(1, 50),
     ];
 });
