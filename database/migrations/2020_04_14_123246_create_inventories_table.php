@@ -18,7 +18,6 @@ class CreateInventoriesTable extends Migration
             $table->char('lot_code', 10);
             $table->bigInteger('amount');
             $table->date('dead_line');
-            $table->tinyInteger('status_flug')->default(0);
             $table->string('comment', 256);
             $table->unsignedBigInteger('material_id')->unsigned();
             $table->timestamps();
