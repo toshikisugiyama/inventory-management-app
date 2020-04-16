@@ -12,6 +12,6 @@ $factory->define(Inventory::class, function (Faker $faker) {
         'amount' => $faker->numberBetween(1, 1000),
         'dead_line' => $faker->dateTime(),
         'comment' => $faker->sentence,
-        'material_id' => $faker->numberBetween(1, 50),
+        'material_id' => rand(1, 4) * 10 + 1,
     ];
 });
