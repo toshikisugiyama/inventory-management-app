@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Inventory;
 use Illuminate\Http\Request;
+use App\Http\Resources\Inventories as InventoryResource;
 
 class InventoryController extends Controller
 {
@@ -14,7 +15,7 @@ class InventoryController extends Controller
      */
     public function index()
     {
-        //
+        return new InventoryResource(Inventory::all());
     }
 
     /**
