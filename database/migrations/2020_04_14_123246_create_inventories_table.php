@@ -22,7 +22,7 @@ class CreateInventoriesTable extends Migration
             $table->unsignedBigInteger('material_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('material_id')->references('id')->on('materials');
+            $table->foreign('material_id')->references('id')->on('materials')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
