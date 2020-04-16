@@ -19,10 +19,7 @@ class CreateMaterialsTable extends Migration
             $table->string('supplier');
             $table->string('unit');
             $table->string('comment', 256);
-            $table->unsignedBigInteger('inventory_id')->unsigned();
             $table->timestamps();
-
-            $table->foreign('inventory_id')->references('id')->on('inventories');
         });
     }
 

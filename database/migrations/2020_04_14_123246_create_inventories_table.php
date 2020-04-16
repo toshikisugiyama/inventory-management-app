@@ -20,7 +20,10 @@ class CreateInventoriesTable extends Migration
             $table->date('dead_line');
             $table->tinyInteger('status_flug')->default(0);
             $table->string('comment', 256);
+            $table->unsignedBigInteger('material_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('material_id')->references('id')->on('materials');
         });
     }
 
