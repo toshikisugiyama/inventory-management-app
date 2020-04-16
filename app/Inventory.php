@@ -8,6 +8,6 @@ class Inventory extends Model
 {
     public function material ()
     {
-        return $this->belongsTo('App\Material', 'material_id');
+        return $this->belongsTo('App\Material');
     }
 }
