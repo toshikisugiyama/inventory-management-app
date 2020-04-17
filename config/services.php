@@ -30,4 +30,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'passport' => [
+        'pass_client_id' => env('PASSWORD_GRANT_CLIENT_ID'),
+        'pass_client_secret' => env('PASSWORD_GRANT_CLIENT_SECRET'),
+    ],
 ];
