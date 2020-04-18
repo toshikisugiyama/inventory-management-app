@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use Illuminate\Http\Request;
 use App\Utilities\ProxyRequest;
 
 class AuthController extends Controller
@@ -45,11 +44,11 @@ class AuthController extends Controller
     {
         $user = User::where('email', request('email'))->first();
 
-        abort_unless($user, 404, 'This combination does not exits.');
+        abort_unless($user, 404, 'This combination does not exists.');
         abort_unless(
             \Hash::check(request('password'), $user->password),
             403,
-            'This combination does not exits.'
+            'This combination does not exists.'
         );
 
         $resp = $this->proxy->grantPasswordToken(request('email'), request('password'));
@@ -67,7 +66,7 @@ class AuthController extends Controller
 
         return response([
             'token' => $resp->access_token,
-            'expiresIn' => $resp-$expires_in,
+            'expiresIn' => $resp->expires_in,
             'message' => 'Token has been refreshed',
         ], 200);
     }
